@@ -10,7 +10,8 @@ function numberToTable(number){
     }
 }
 
-// 2 - funcion que determina si un numero es primo
+
+// Funcion es Primo que será reutilizada
 
 function esPrimo(numPrimo){
     let result = true;
@@ -21,22 +22,24 @@ function esPrimo(numPrimo){
                 break;
             }
         }
-        return result ? console.log("es primo") : console.log("no es primo");    
     }
+    return result    
+}
+
+// 2 - funcion que determina si un numero es primo
+
+function consultarPrimo(numero){ 
+    
+    return esPrimo(numero) ? console.log("es primo") : console.log("no es primo");    
+    
 }
 
 // 3 - mostrar los numeros primos entre 0 y 100
 
 function primosEntre0y100(){
     for(let numero = 1; numero < 100; numero++){
-        let result = false;
-        for(let i = 2; i < numero; i++){
-            if (numero % i == 0){
-                result = true;
-                break;
-            }
-        }
-        if(result==false){console.log(numero)}
+        
+        if(esPrimo(numero)==true){console.log(numero)}
     }
 }
 
@@ -45,24 +48,21 @@ function primosEntre0y100(){
 function primeros100Primos(){
     let count = 1, numero = 1;
     while(count <= 100){
-        let result = false;
-        for(let i = 2; i < numero; i++){
-            if (numero % i == 0){
-                result = true;
-                break;
-            }          
-        }
-        if(result==false){console.log(numero); count++;}
+        if(esPrimo(numero) == true){console.log(numero); count++;}
         numero++;
     }
 }
 
 // 5 - funcion
 
-function promedio (num1 = 0, num2 = 0){
+function promedio(num1 = 0, num2 = 0){
+    if (num1 == ""){num1 = 0}
+    if (num2 == ""){num2 = 0}
+    num1 = parseInt(num1);
+    num2 = parseInt(num2);
     return (num1+num2)/2;
-}
 
+}
 
 //Estructura del programa
 
@@ -85,10 +85,9 @@ primeros100Primos();
 console.log("-----");
 
 alert("Por último se mostrará el promedio de dos números");
-var n1 = parseInt(prompt("Primer número"));
-var n2 = parseInt(prompt("Segundo número"));
+var n1 = prompt("Primer número");
+var n2 = prompt("Segundo número");
 console.log("Promedio = " + promedio(n1,n2));
 alert("El promedio es "+promedio(n1,n2));
 
 console.log("-----");
-
