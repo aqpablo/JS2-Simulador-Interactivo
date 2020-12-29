@@ -70,7 +70,7 @@ numberToTable(prompt("Ingrese un número para mostrar su tabla de multiplicar en
 
 console.log("-----");
 
-esPrimo(prompt("Ingrese un número del cual quiera conocer si es primo o no"));
+consultarPrimo(prompt("Ingrese un número del cual quiera conocer si es primo o no"));
 
 console.log("-----");
 
